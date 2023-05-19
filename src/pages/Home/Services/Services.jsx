@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router';
 import ServicesCard from '../ServicesCard/ServicesCard';
 
 const Services = () => {
 
+    
+
+    
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('services.json')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
